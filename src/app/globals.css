@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* The Royal Blue base */
+  background-color: #003DA5; 
+  color: #ffffff; 
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* LAYER 1: The Retro Vertical Stripes */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 60px,
+    transparent 60px,
+    transparent 120px
+  );
+}
+
+/* LAYER 2: The Craft Paper / Grain Texture */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  /* Generates an actual noise pattern via SVG */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='0.12' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  /* Blends the noise into the blue/stripes behind it */
+  mix-blend-mode: overlay;
+}
+
+/* Custom Scrollbar to match */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #002b7a; 
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD100; 
+  border-radius: 5px;
 }
