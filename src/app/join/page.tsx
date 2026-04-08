@@ -96,8 +96,8 @@ export default function JoinPage() {
                   {/* Major Selection */}
                   <div className="flex flex-col gap-2">
                     <label className="text-[#FFD100] font-bold uppercase tracking-widest text-xs">Major</label>
-                    <select required className="bg-[#003DA5] border-2 border-[#004ee6] rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-[#00e5ff] transition-colors appearance-none cursor-pointer">
-                      <option value="" disabled selected>Select your major...</option>
+                    <select defaultValue="" required className="bg-[#003DA5] border-2 border-[#004ee6] rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-[#00e5ff] transition-colors appearance-none cursor-pointer">
+                      <option value="" disabled>Select your major...</option>
                       <option value="cs">Computer Science</option>
                       <option value="cis">Computer Information Systems</option>
                       <option value="ce">Computer Engineering</option>
