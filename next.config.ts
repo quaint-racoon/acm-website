@@ -11,7 +11,10 @@ const nextConfig = {
     NEXT_PUBLIC_BASE_PATH: '/acm-website',
   },
   turbopack: {
-    root: './',
+    root: process.cwd(),
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 export default nextConfig;

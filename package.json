@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://quaint-racoon.github.io/acm-website",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && node ./scripts/nojekyll.js",
     "deploy": "gh-pages -d out",
     "dev": "next dev",
     "build": "next build",
