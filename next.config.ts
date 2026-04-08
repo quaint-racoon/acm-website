@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  output: 'export', // Outputs the 'out' folder
+  images: {
+    unoptimized: true,
+  },
+  basePath: '/acm-website',
+  assetPrefix: '/acm-website',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/acm-website',
+  },
+  turbopack: {
+    root: './',
+  },
 };
-
 export default nextConfig;

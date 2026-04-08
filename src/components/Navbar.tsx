@@ -15,8 +15,13 @@ export default function Navbar() {
         {/* Logo Icon & Name */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 bg-white rounded-lg p-1 overflow-hidden transition-transform group-hover:rotate-12">
-             {/* Replace /logo.png with your actual file name in public/ */}
-            <img src="/images/icon.webp" alt="ACM Logo" className="w-full h-full object-contain" />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/icon.webp`}
+              alt="ACM Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-xl font-black tracking-tighter text-white">ACM<span className="text-[#FFD100]">JU</span></span>
