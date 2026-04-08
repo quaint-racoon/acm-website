@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import ClickSpark from "@/components/ClickSpark";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Navbar />
         <ClickSpark />
         {children}
+        <Footer />
       </body>
     </html>
   );
